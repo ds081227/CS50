@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+    <form action="/sell" method="post">
+        <table>
+            <thead>
+                <tr>
+                    <th>Stock symbol</th>
+                    <th>Number of shares to sell</th>
+                    <th>Sell</th>
+                </tr>
+            </thead>
+            <tbody>
+            <!-- TODO: Loop through the database entries to display them in this table -->
+                <tr>
+                    <td>
+                        <select name="symbol">
+                            {% for record in records %}
+                                <option value="{{ record.stock_symbol }}" data-max-shares="{{ record.total_shares }}">
+                                    {{ record.stock_symbol }}
+                                </option>
+                            {% endfor %}
+                        </select>
+                    </td>
+                    <td>
+                        <input class="form-control mx-auto w-auto" name="shares" type="number" required min="0">
+                    </td>
+                    <td>
+                        <button class="btn btn-primary" name="sell" type="submit">Sell</button>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+    </form>
+    <script>
+        let select = document.querySelector('select[name="symbol"]');
+        let shares = document.querySelector('input[name="shares"]');
+
+        select.addEventListener('change', function() {
+        // Get the selected option
+            let selectedOption = this.options[this.selectedIndex];
+
+        // Update the maximum value of the shares input
+            shares.max = selectedOption.getAttribute('data-max-shares');
+        })
+    </script>
+{% endblock %}

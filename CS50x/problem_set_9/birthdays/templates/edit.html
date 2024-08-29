@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="/static/styles.css" rel="stylesheet">
+        <title>Birthdays</title>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Birthdays</h1>
+        </div>
+        <div class="container">
+            <div class="section">
+
+                <h2>Edit the birthday</h2>
+                <form action="/update" method="post">
+                    <input name="id" type="hidden" value="{{ birthday.id }}">
+                    <input name="name" autocomplete="off" placeholder="Name" type="text" required value="{{ birthday.name }}">
+                    <input name="month" autocomplete="off" placeholder="Month" type="number" min="1" max="12" required value="{{ birthday.month }}">
+                    <input name="day" autocomplete="off" placeholder="Day" type="number" min="1" max="31" required value="{{ birthday.day }}">
+                    <button type="submit">Save</button>
+                </form>
+            </div>
+        </div>
+        <script>
+            let month = document.querySelector('input[name="month"]')
+            let day = document.querySelector('input[name="day"]')
+            month.addEventListener('change', function(){
+                if (month.value == 2){
+                    day.max = 29
+                }
+                else{
+                    day.max = 31
+                }
+            })
+        </script>
+    </body>
+</html>

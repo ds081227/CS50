@@ -1,0 +1,13 @@
+HTML Tags:
+<div> <p> <h1> <h2> <button> <nav> <link> <script>  <a> <meta>
+
+CSS Properties:
+color, background-color, margin, text-align, height, z-index
+
+Javascript implementation:
+I implemented JavaScript for my navigation bar to insert it into every html page that I
+createdso that I only need to change the bar in one place if I decide to add more tabs
+into my website.
+
+I also use i on the draw.html page to create a expanded image box to let the users see
+my drawings more clearly in a higher resolution.

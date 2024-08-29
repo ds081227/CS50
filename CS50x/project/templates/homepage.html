@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Homepage
+{% endblock %}
+
+{% block main %}
+    <form action="/homepage" method="get">
+        <h2>Greetings, {{ user.name }} !</h2>
+        <p></p>
+        <div class="mb-3">
+            <p><strong>Account number:</strong> {{ user.account_number }} </p>
+            <p><strong>Current cash balance:</strong> {{ user.cash | usd }} USD</p>
+        </div>
+        <table class="transaction table table-hover">
+            <thead>
+                <tr>
+                    <th>Time</th>
+                    <th>Transaction Details</th>
+                    <th>Giver account</th>
+                    <th>Receiver account</th>
+                    <th>Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+            <!-- TODO: Loop through the database entries to display them in this table -->
+                {% for record in records %}
+                    <tr>
+                        <td>{{ record.time }}</td>
+                        <td>{{ record.transaction_type }}</td>
+                        <td>{{ record.giver_account }}</td>
+                        <td>{{ record.receiver_account }}</td>
+                        <td>{{ record.amount | usd }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </form>
+{% endblock %}

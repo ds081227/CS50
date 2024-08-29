@@ -1,0 +1,21 @@
+Hello world, this is Kenny from Hong Kong, and this is my CS50P final project.
+This program is designed for my friend to generate a 5 week schedule for 12 teams
+in a basketball fantasy league. In the past he needs to draw lots manually, which is not
+efficient and also waste of paper. That's why I wrote this program for him so that he can generate
+the schedule in just one click.
+Before executing the program, the user first needs to enter the team names inside the teams.txt
+file according to their ranking base on results from previous weeks. Make sure you enter
+exactly 12 teams, if you enter more or less than 12 teams, the program will show a
+error message saying invalid number of teams.
+Next you have to make sure the font file msjh.tff is inside the same directory as the program.
+when you run the program, it will download this font file msjh.ttf for you
+The reason for
+using this font file is because this font can successfully output the pdf if there are non-English
+words in the team name.
+And now you can run the program in the terminal window, and a pdf file called schedule will be
+generated. As you can see here here, the pdf file contains all 5 weeks schedule. I will
+run it a few more times to show that the schedule are randomly generated. and that's it
+for my program, thank you.
+
+
+

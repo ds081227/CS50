@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+    <form action="/withdraw" method="post" class="withdraw">
+        <h3>Withdraw from your account</h3>
+        <p></p>
+        <div class="slidecontainer">
+            <input type="range" min="1" max="{{ user_cash }}" value="1" class="slider" id="myRange" name="withdraw">
+            <p></p>
+            <input autocomplete="off" min="1" max="{{ user_cash }}" style="width:200px" autofocus class="form-control" id="num_input" name="withdraw" placeholder="Amount" type="number"
+            required>
+            <p>Amount: <span id="demo"></span></p>
+        </div>
+        <button class="btn btn-primary" name="submit" type="submit">Withdraw</button>
+    </form>
+
+    <script>
+        var slider = document.getElementById("myRange");
+        var output = document.getElementById("demo");
+        var inputField = document.getElementById("num_input");
+        output.innerHTML = slider.value;
+        slider.oninput = function() {
+          output.innerHTML = this.value;
+          inputField.value = this.value;
+        };
+        inputField.addEventListener('blur', function() {
+        slider.value = this.value;
+        output.innerHTML = this.value;
+        });
+    </script>
+{% endblock %}

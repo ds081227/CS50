@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+    <form action="/transfer" method="post">
+        <h3>Transfer to other account <i class="fa fa-money" aria-hidden="true"></i></i></h3>
+        <p></p>
+        <div class="mb-3">
+            <label for="transfer" class="form-label">Transfer amount</label>
+            <input autocomplete="off" autofocus class="form-control w-auto" name="transfer_amount"type="number"
+            required min="0">
+        </div>
+        <div class="mb-3">
+            <label for="bank_account" class="form-label">Bank account of transferee</label>
+            <input autocomplete="off" class="form-control w-auto" name="target_account" type="text"
+            required>
+        </div>
+        <button class="btn btn-primary" name="submit" type="submit">Transfer</button>
+    </form>
+
+    <script>
+        function confirmation(){
+            var target_account = document.querySelector('input[name="target_account"]').value;
+            var amount = document.querySelector('input[name="transfer"]').value;
+            var result = confirm(`You are about to transfer ${amount} to ${target_account}. `);
+            return result;
+        }
+    </script>
+
+{% endblock %}

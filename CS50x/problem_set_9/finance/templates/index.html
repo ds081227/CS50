@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+    <form action="/" method="get">
+        <h2>Greetings, {{ user.username }} !</h2>
+        <p></p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Stock symbol</th>
+                    <th>Shares owned</th>
+                    <th>Current price (USD)</th>
+                    <th>Total value of holding (USD) </th>
+                </tr>
+            </thead>
+            <tbody>
+            <!-- TODO: Loop through the database entries to display them in this table -->
+                {% for record in records %}
+                    <tr>
+                        <td>{{ record.stock_symbol }}</td>
+                        <td>{{ record.total_shares }}</td>
+                        <td>{{ record.current_price | usd }}</td>
+                        <td>{{ record.total_value | usd }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <div class="mb-3">
+            <p><strong>Current cash balance:</strong> {{ user.cash | usd }} USD</p>
+        </div>
+        <div class="mb-3">
+            <p><strong>Grand total:</strong> {{ user.grand_total | usd }} USD</p>
+        </div>
+    </form>
+{% endblock %}

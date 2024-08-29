@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+        <link href="styles.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <title>Things I like</title>
+    </head>
+    <body>
+        <div id="navbar"></div>
+        <div class="johnmayer-image">
+        <div class="johnmayer-text">
+            <p>Other than coding, I also love playing guitar.</p>
+            <p>John Mayer is one of the player that I look up to, the blues style playing
+                combined with his vocal is very soothing to listen to, my favourite John
+                Mayer songs are <a target="_blank" href="https://www.youtube.com/watch?v=_DfQC5qHhbo">Neon</a> and
+                <a target="_blank" href="https://www.youtube.com/watch?v=32GZ3suxRn4">Slow Dancing in a Burning Room</a>.
+            </p>
+            <p>
+                <a target="_blank" href="https://www.youtube.com/johnmayer" class="fa fa-youtube"></a>
+                <a target="_blank" href="https://www.instagram.com/johnmayer/" class="fa fa-instagram"></a>
+            </p>
+        </div>
+        </div>
+        <div class="polyphia-image">
+        <div class="polyphia-text">
+            <p>Polyphia is another band that I love, their style is very different compared
+                to John Mayer's which combines different guitar genres.</p>
+            <p>My favourite Polyphia
+                songs are <a target="_blank" href="https://www.youtube.com/watch?v=Z5NoQg8LdDk">Playing God</a> and
+                <a target="_blank" href="https://www.youtube.com/watch?v=9_gkpYORQLU">G.O.A.T.</a>.</p>
+            <p>
+                <a target="_blank" href="https://www.youtube.com/@Polyphia" class="fa fa-youtube"></a>
+                <a target="_blank" href="https://www.instagram.com/polyphia/" class="fa fa-instagram"></a>
+            </p>
+        </div>
+        </div>
+
+        <script>
+            //Fetch the navigating bar
+            fetch('nav.html').then(response => response.text()).then(data => {
+            document.getElementById('navbar').innerHTML = data;
+            });
+        </script>
+
+    </body>
+</html>
+

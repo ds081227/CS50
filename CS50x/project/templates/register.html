@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+    <form action="/register" method="post" name="register">
+        <h2>Thank you for choosing CS50 Bank!</h2>
+        <h2>Please fill in the information below to create your bank account.</h2>
+        <p></p>
+        <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" required class="form-control" id="name" name="name">
+        </div>
+        <div class="mb-3">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" required class="form-control" id="username" name="username">
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Password (At least 8 letters, including both uppercase, lowercase and numbers)</label>
+            <input type="password" required class="form-control" id="password" name="password">
+        </div>
+        <div class="mb-3">
+            <label for="confirmation" class="form-label">Reconfirm password</label>
+            <input type="password" required class="form-control" id="confirmation" name="confirmation">
+        </div>
+        <button class="btn btn-primary" name="submit" type="submit">Submit</button>
+    </form>
+    <script>
+        let form = document.querySelector('form[name="register"]');
+        form.addEventListener('submit', function(event) {
+            var password = document.querySelector('input[name="password"]').value;
+            var confirmation = document.querySelector('input[name="confirmation"]').value;
+            errors = []
+            if (password != confirmation) {
+                errors.push("Password and confirmation doesn't match");
+            };
+            if (password.length < 8) {
+                errors.push("Your password must be at least 8 characters");
+            };
+            if (password.search(/[a-z]/) < 0) {
+                errors.push("Your password must contain at least one lowercase letter.");
+            };
+            if (password.search(/[0-9]/) < 0) {
+                errors.push("Your password must contain at least one digit.");
+            };
+            if (password.search(/[A-Z]/) < 0) {
+                errors.push("Your password must contain at least one uppercase letter.");
+            };
+            if (errors.length > 0){
+                event.preventDefault();
+                alert(errors.join("\n"));
+            };
+        })
+    </script>
+{% endblock %}

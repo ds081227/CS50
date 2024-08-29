@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Apology
+{% endblock %}
+
+{% block main %}
+<div class="mb-3">
+    <img class="apology" src="static/sloth.jpeg" alt="Confusing Sloth">
+</div>
+<div class="mb-3">
+    <p class="apology">Opps..seems like something went wrong..</p>
+    <p class="apology">Error code: {{ code }}</p>
+    <p class="apology">Error Message: {{ error_message }}</p>
+</div>
+
+{% endblock %}

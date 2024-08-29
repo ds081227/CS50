@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+    <form action="/register" method="post">
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="username" placeholder="Username" type="text" required>
+        </div>
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" name="password" placeholder="Password" type="password" required>
+        </div>
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" name="confirmation" placeholder="Reconfirm password" type="password" required>
+        </div>
+        <button class="btn btn-primary" name="submit" type="submit">Submit</button>
+    </form>
+    <script>
+        let submit = document.querySelector('button[name="submit"]');
+        submit.addEventListener('click', function(event) {
+            var password = document.querySelector('input[name="password"]').value;
+            var confirmation = document.querySelector('input[name="confirmation"]').value;
+            if (password != confirmation) {
+                event.preventDefault();
+                alert("Password and confirmation doesn't match");
+            };
+        })
+    </script>
+{% endblock %}

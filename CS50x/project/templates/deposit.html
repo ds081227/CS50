@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+    <form action="/deposit" method="post">
+        <h3>Deposit into your account</h3>
+        <p></p>
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control w-auto" name="deposit" placeholder="Amount" type="number"
+            required min="0">
+        </div>
+        <button class="btn btn-primary" name="submit" type="submit">Deposit</button>
+    </form>
+{% endblock %}

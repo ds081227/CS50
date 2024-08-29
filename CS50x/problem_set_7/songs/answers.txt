@@ -1,0 +1,10 @@
+1.If songs.db contains the top 100 songs of one listener from 2018, how would you characterize their audio aura?
+I will calculate the average energy, valence, danceability of these 100 songs and see which of the three attributes has the highest score, and then assign the aura to the listener.
+For example if the energy score is high, then the aura would be orange, representing a rebellious and bold type person, and if the energy score is low, then it will fall into the green
+category representing listeners that might be more calm in comparison.
+
+2.Hypothesize about why the way you’ve calculated this aura might not be very representative of the listener. What better ways of calculating this aura would you propose?
+The sample might not accurately reflect the user's taste as it takes in 100 most played songs, which is calculating the total listen time for that song, but these time might actually have
+different weightings as the songs towards the end of the list might only be listened a few times, in compared to the top songs that are listened many many times, but in this calculation
+they are of the same weighting. So I propose to take account into the listening time for each corresponding song, that songs with higher listening time would have a higher weighting when calculating
+the average score.

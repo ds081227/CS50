@@ -1,0 +1,11 @@
+sort1 uses: Bubble
+
+How do you know?: Takes a very short run time when the input is sorted.
+
+sort2 uses: Merge Sort
+
+How do you know?: Run time is significantly faster than the other two sorting program when sorting a random input.
+
+sort3 uses: Selection
+
+How do you know?: The real run time is around the same and very long when the input size is large, no matter the input is random, reversed, or sorted.

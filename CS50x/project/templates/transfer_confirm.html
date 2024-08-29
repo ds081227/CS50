@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+    <form action="/confirmation" method="post" onsubmit="confirmation()">
+        <div class="mb-3">
+            <p>Please check the following information for your transferral</p>
+            <p>Name: {{ target_name }}</p>
+            <p>Bank account: {{ account_number }} </p>
+            <p>Transfer amount: {{ transfer_amount }}</p>
+            <button class="btn btn-primary" name="submit" type="submit">Transfer</button>
+        </div>
+        <div>
+            <input type="hidden" name="target_account" value="{{ account_number }}">
+            <input type="hidden" name="transfer_amount" value="{{ transfer_amount }}">
+        </div>
+
+    </form>
+
+    <script>
+        function confirmation() {
+            confirm("Are you sure you want to proceed with the transfer?")
+        }
+    </script>
+
+{% endblock %}

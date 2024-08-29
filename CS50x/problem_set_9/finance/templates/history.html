@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+    <form action="/history" method="get">
+        <table>
+            <thead>
+                <tr>
+                    <th>Stock symbol</th>
+                    <th>Shares bought</th>
+                    <th>Price (USD)</th>
+                    <th>Transaction time</th>
+                    <th>Transaction type</th>
+                </tr>
+            </thead>
+            <tbody>
+            <!-- TODO: Loop through the database entries to display them in this table -->
+                {% for record in records %}
+                    <tr>
+                        <td>{{ record.stock_symbol }}</td>
+                        <td>{{ record.total_shares }}</td>
+                        <td>{{ record.price | usd }}</td>
+                        <td>{{ record.purchase_time }}</td>
+                        <td>{{ record.transaction_type }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </form>
+{% endblock %}
